@@ -139,7 +139,7 @@ VERSIONCHECK: DISABLE
 void
 crc(data,bits=32)
     PREINIT:
-	U32 data_len;
+	int data_len;
     INPUT:
 	char *data = (char *)SvPV(ST(0),data_len);
 	int bits;

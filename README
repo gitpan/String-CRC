@@ -1,3 +1,55 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+
+This is a MacPerl build of String::CRC.  You need a recent MacPerl
+(such as MacPerl 5.2.0r4, the latest as of this build) and either
+the PPC MacPerl or the CFM68K MacPerl (because dynamic loading
+is not avialable in the non-CFM 68K MacPerl).
+
+You might also need to run autosplit:
+
+    #!perl -w
+    use AutoSplit;
+    $dir = "$ENV{MACPERL}site_perl";
+    autosplit("$dir:String:CRC.pm","$dir:auto",0,1,1);
+
+Also recommended are Paul Schinder's Fixed Library Routines,
+available from his web site:
+
+    http://pobox.com/~schinder/MacPerl.html
+
+This stuff is always available on CPAN and on pudge.net.
+
+    http://pudge.net/macperl/
+    http://www.perl.com/CPAN/authors/id/CNANDOR/
+
+CHANGES:
+
+CRC.xs was changed slightly on line 142.
+
+    int data_len;
+
+was changed to:
+
+    U32 data_len;
+
+Thanks to Arved Sandstrom for that.  Hopefully, it will still work
+properly; it did pass all tests.
+
+- -- 
+Chris Nandor          mailto:pudge@pobox.com         http://pudge.net/
+%PGPKey = ('B76E72AD', [1024, '0824090B CE73CA10  1FF77F13 8180B6B6'])
+
+-----BEGIN PGP SIGNATURE-----
+Version: PGPfreeware 5.0 for non-commercial use <http://www.pgp.com>
+Charset: noconv
+
+iQCVAwUBNqI8qihcZja3bnKtAQHPLAP+IQ7SDvbU33UhjVRHieFz7L9mPMEeL0l1
+EhVIviCCSwk06lxNzhf2NCt4YoBGxv8iHXph2bKHAeeU4CxTSaF2w5ZFQEcchmLE
+u1PLhWGIjXY6/UndpX/rE9MwsoLhcsOn9i7ZJSfPSs8La7fO6EmSHwnuWgflrhjP
+dnKPLA+kJko=
+=GsD8
+-----END PGP SIGNATURE-----
+
 
 http://www.backplane.com/diablo/crc64.html
 
